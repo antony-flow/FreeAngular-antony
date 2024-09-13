@@ -1,0 +1,16 @@
+<p>forms-page works!</p>
+<div>
+    <form [formGroup]="Userform" (ngSubmit)="onSubmit()">
+    <label for="name"> Enter Your Name: </label>
+        <input type="text" name="name" formControlName="name" />
+    <label for="age"> Enter Your Age: </label>
+        <input type="number" name="age" formControlName="age" />
+        <button type="submit" [disabled]="!Userform.valid" >Submit</button>
+        <button (clicl)="UpdateformValue()">Update Value</button>
+        <p>Form Status: {{ Userform.status }}</p>
+    </form>
+   
+    <div>
+        <app-forms-child [comingfromparent]="parentproperty" (msgevent)="HandleChildChnage($event)"></app-forms-child>
+    </div>
+</div> 

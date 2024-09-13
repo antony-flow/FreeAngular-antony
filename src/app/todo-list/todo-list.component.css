@@ -1,0 +1,37 @@
+.active{
+    background-color: red;
+    color: white;
+}
+.done{
+    text-decoration: line-through;   
+    color: red;
+    padding-left: 10px;
+}
+.notdone{
+    text-decoration: none;
+    color: white;
+    padding-left: 10px;
+}
+.listitembox{
+    width: 15%;
+    background-color: rgb(79, 157, 221);
+    border: 2px solid rgb(159, 218, 82);
+    padding: 10px;
+    font-size: large;
+    margin: 10px;
+}
+.listitemboxspan{
+    width: 60px;
+    margin-left: 30px;
+}
+.counter{
+    border: 2px solid black;
+    font-size: 28px;
+    width: 15%;
+    background-color: beige;
+    padding: 10px;
+}
+.counter button{
+    margin-left: 20px;
+    height: 30px;
+}

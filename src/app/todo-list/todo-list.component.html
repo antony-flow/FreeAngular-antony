@@ -1,0 +1,32 @@
+<p>todo-list works!</p>
+<h2>today date is {{sampleText | todopipe }}</h2>
+<form>
+<input type="text" [formControl]="inputText"/>
+</form>
+
+<button  (click)="HandleAddTask()">Add</button>
+<!-- <input type="text" [(ngModel)]="demoText"/>
+<span>hello from {{demoText}}</span> -->
+
+<div [class]="['listitembox']" *ngFor="let item of todoList; let i =index;">
+    <a [routerLink]='["/todoapp", i]'>
+    <input type="checkbox" [checked]="item.completed" (change)="OnToggleTask(item.id)"/>
+    <span [ngClass]="item.completed===true ? 'done' : 'notdone' ">{{i}} {{item.text}}</span>
+    <button [class]="['listitemboxspan']"  (click)="DeleteTask(item.id)">Delete</button>
+</a>
+</div>
+
+<div>
+    @if(12>7){
+        <p>consition is true</p>
+    }
+    @for(item of todoList; track item.id; let inx = $index){
+        <h3>{{item.text}}</h3>
+        <h2>{{inx}}</h2>
+    }
+    <div [class]="['counter']">
+    <span>{{count()}}</span>
+    <button (click)="HandleIncrease()">increase</button>
+    <button [disabled]="disabled" (click)="HandleDecrease()">decrease</button>
+     </div>
+</div>

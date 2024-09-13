@@ -1,0 +1,42 @@
+.activebutton {
+    box-shadow:  4px 5px 5px 0 #bcc8d4;
+    background: #bddbfa linear-gradient(to bottom, #bddbfa 5%, #80b5ea 100%);
+    border: 1px solid #84bbf3;
+    color: #ffffff;
+    text-shadow: 2px 2px 2px #c24157;
+    padding: 10px;
+    text-decoration: none;
+}
+.tabstyle{
+    margin: 20px;
+}
+.tabstyle a{
+    text-decoration: none;
+    padding-left: 10px;
+}
+.nav-btn{
+    display: flex;
+    list-style: none;
+    border: 2px solid black;
+    justify-content: space-between ;
+    background: transparent;
+    backdrop-filter: blur(10px);
+   
+}
+.nav-btn ul{
+    display: flex;
+    list-style: none;
+}
+.navbar{
+    top: 0;
+    width: 100%;
+    position: fixed;
+    
+}
+.content {
+    padding-top: 60px; 
+  }
+  .mainbody{
+    margin: 0;
+    padding: 0;
+  }

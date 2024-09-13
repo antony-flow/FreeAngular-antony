@@ -1,0 +1,49 @@
+
+<div [class]="['main_container']">
+    <p>dynamic-form works!</p>
+
+<form [formGroup]="Mainform" (ngSubmit)="OnSubmit()">
+    <div formGroupName="Feedbackform">
+        <div *ngFor="let field of getFormControl()">
+        <label>
+            {{field}}
+        </label>
+        <ng-container [ngSwitch]="formControlTypes[field]">
+            <input *ngSwitchCase="'text'" [formControlName]="field" type="text" />
+            <input *ngSwitchCase="'email'" [formControlName]="field" type="email" />
+            <input *ngSwitchCase="'number'" [formControlName]="field" type="number" />
+            <div *ngSwitchCase="'checkbox'">
+                <div *ngFor="let option of options[field]">
+                    <input type="checkbox" [formControlName]="field" [value]="option" />{{option}}
+                </div>
+                <input type="text" formControlName="newoption" placeholder="Add New Option" />
+                <button (click)="addOption(field)" >Add Option</button>
+            </div>
+            <div *ngSwitchCase="'radio'">
+                <div *ngFor="let option of options[field]" >
+                    <input type="radio" [formControlName]="field" [value]="option" />{{option}}
+                </div>
+                <input type="text" formControlName="newoption" placeholder="Add New Option" />
+                <button (click)="addOption(field)" >Add Option</button>
+            </div>
+        </ng-container>
+        <!-- <label [for]="control">{{control}}: </label>
+        <input [id]="control" [formControlName]="control" [type]="formControlTypes[control]" /> -->
+        </div>
+        <button (click)="OnSubmit()" type="submit" > Submit</button>
+
+    </div>
+
+    <div formGroupName="newFieldForm">
+        <label>Field Type: </label>
+        <select formControlName="selectedType" >
+            <option *ngFor="let type of inputType" [value]="type">{{type}}</option>
+        </select>
+        <label>Field Name</label>
+        <input type="text" formControlName="newFieldName"/>
+        <button type="button" (click)="addNewField()" >Add new field</button>
+    
+    </div>  
+</form>
+
+</div>
